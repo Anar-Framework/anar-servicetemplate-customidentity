@@ -2,7 +2,7 @@
 package af.gov.anar.dck.domain.workflow.repository;
 
 
-import af.gov.anar.dck.domain.workflow.domain.Workflow;
+import af.gov.anar.dck.domain.workflow.model.Workflow;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

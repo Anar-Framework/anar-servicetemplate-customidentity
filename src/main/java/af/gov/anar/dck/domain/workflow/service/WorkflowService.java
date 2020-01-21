@@ -2,7 +2,7 @@
 package af.gov.anar.dck.domain.workflow.service;
 
 
-import af.gov.anar.dck.domain.workflow.domain.Workflow;
+import af.gov.anar.dck.domain.workflow.model.Workflow;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
