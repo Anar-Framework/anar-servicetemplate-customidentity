@@ -9,12 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>af.gov.anar</groupId>
-	<artifactId>anar-servicetemplate</artifactId>
+	<artifactId>anar-datacollection-kit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anar-servicetemplate</name>
-	<description>Service Template for Developing Services for Anar Framework</description>
+	<name>anar-datacollection-kit</name>
+	<description>Data Collection Kit for Anar Framework</description>
 
 	<properties>
+		<start-class>af.gov.anar.dck.Application</start-class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
