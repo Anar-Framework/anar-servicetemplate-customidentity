@@ -1,4 +1,4 @@
-package af.gov.anar.dck.business.api;
+package af.gov.anar.dck.domain.form.api;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
