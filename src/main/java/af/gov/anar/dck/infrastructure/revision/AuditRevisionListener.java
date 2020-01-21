@@ -1,6 +1,6 @@
 package af.gov.anar.dck.infrastructure.revision;
 
-import af.gov.anar.dck.infrastructure.service.UserService;
+import af.gov.anar.dck.domain.service.UserService;
 import org.hibernate.envers.RevisionListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ public class AuditRevisionListener implements RevisionListener {
     @Override
     public void newRevision(Object revisionEntity) {
         AuditRevisionEntity auditRevisionEntity = (AuditRevisionEntity) revisionEntity;
-        auditRevisionEntity.setUsername(userService.getPreferredUsername());
+        auditRevisionEntity.setUsername(userService.getLoggedInUser().getUsername());
     }
 
 }

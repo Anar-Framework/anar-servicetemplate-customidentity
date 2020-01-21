@@ -1,6 +1,6 @@
 package af.gov.anar.dck.infrastructure.revision;
 
-import af.gov.anar.dck.infrastructure.service.UserService;
+import af.gov.anar.dck.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ public class AuditorAwareImpl implements AuditorAware<String> {
 
     @Override
     public Optional<String> getCurrentAuditor() {
-        return Optional.of(userService.getPreferredUsername());
+        return Optional.of(userService.getLoggedInUser().getUsername());
     }
 
 }

@@ -7,6 +7,7 @@ import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import af.gov.anar.dck.domain.service.UserService;
 import af.gov.anar.lang.infrastructure.exception.common.ExceptionUtils;
 import af.gov.anar.lib.audit.builder.AuditRequestBuilder;
 import af.gov.anar.lib.audit.data.AuditRequestDto;
@@ -17,7 +18,6 @@ import af.gov.anar.dck.infrastructure.constant.ApplicationGenericConstants;
 import af.gov.anar.dck.infrastructure.enumeration.AuditEvent;
 import af.gov.anar.dck.infrastructure.enumeration.Components;
 import af.gov.anar.dck.infrastructure.service.HostService;
-import af.gov.anar.dck.infrastructure.service.UserService;
 import af.gov.anar.dck.infrastructure.util.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -78,7 +78,7 @@ public class AuditManagerSerivceImpl extends BaseService implements AuditManager
         auditRequestBuilder.setActionTimeStamp(LocalDateTime.now(ZoneOffset.UTC))
                 .setApplicationId(String.valueOf(APPLICATION_ID))
                 .setApplicationName(String.valueOf(APPLICATION_NAME))
-                .setCreatedBy(userService.getPreferredUsername())
+                .setCreatedBy(userService.getLoggedInUser().getUsername())
                 .setDescription(auditEventEnum.getDescription())
                 .setEventId(auditEventEnum.getId())
                 .setEventName(auditEventEnum.getName())
@@ -89,8 +89,8 @@ public class AuditManagerSerivceImpl extends BaseService implements AuditManager
                 .setIdType(refIdType)
                 .setModuleId(appModuleEnum.getId())
                 .setModuleName(appModuleEnum.getName())
-                .setSessionUserId(userService.getId())
-                .setSessionUserName(userService.getPreferredUsername());
+                .setSessionUserId(userService.getLoggedInUser().getUsername())
+                .setSessionUserName(userService.getLoggedInUser().getUsername());
         auditHandler.addAudit(auditRequestBuilder.build());
     }
 
