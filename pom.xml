@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>af.gov.anar</groupId>
-	<artifactId>anar-identity</artifactId>
+	<artifactId>anar-identity-custom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anar-identity</name>
+	<name>anar-identity-custom</name>
 	<description>Identityt Module of Anar Framework</description>
 
 	<properties>

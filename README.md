@@ -5,4 +5,4 @@
 #### Documentation
 
 Refer to this repository **Wiki** section.
-https://github.com/Anar-Framework/anar-datacollection-kit/wiki
+https://github.com/Anar-Framework/anar-identity-custom/wiki
