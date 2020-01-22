@@ -1,6 +1,6 @@
-package af.gov.anar.dck.common.service;
+package af.gov.anar.dck.notification.websocket.service;
 
-import af.gov.anar.dck.common.model.dto.Notification;
+import af.gov.anar.dck.notification.websocket.dto.Notification;
 import org.springframework.stereotype.Service;
 
 @Service

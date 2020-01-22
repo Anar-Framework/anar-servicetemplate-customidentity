@@ -1,4 +1,4 @@
-package af.gov.anar.dck.common.controller.websocket;
+package af.gov.anar.dck.notification.websocket.api;
 
 
 import lombok.extern.slf4j.Slf4j;

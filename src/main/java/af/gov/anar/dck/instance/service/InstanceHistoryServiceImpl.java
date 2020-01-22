@@ -1,14 +1,10 @@
 package af.gov.anar.dck.instance.service;
 
-import af.gov.anar.dck.instance.model.Instance;
-import af.gov.anar.dck.instance.model.InstanceAttachment;
-import af.gov.anar.dck.instance.model.InstanceComment;
 import af.gov.anar.dck.instance.model.InstanceHistory;
-import af.gov.anar.dck.instance.repository.InstanceCommentRepository;
 import af.gov.anar.dck.useradministration.service.UserService;
 
 import af.gov.anar.dck.instance.repository.InstanceHistoryRepository;
-import af.gov.anar.dck.common.model.dto.Notification;
+import af.gov.anar.dck.notification.websocket.dto.Notification;
 import af.gov.anar.dck.infrastructure.util.enumeration.InstanceHistoryStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

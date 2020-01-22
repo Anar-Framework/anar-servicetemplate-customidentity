@@ -1,7 +1,6 @@
-package af.gov.anar.dck.common.service.impl;
+package af.gov.anar.dck.notification.websocket.service;
 
-import af.gov.anar.dck.common.model.dto.Notification;
-import af.gov.anar.dck.common.service.NotificationService;
+import af.gov.anar.dck.notification.websocket.dto.Notification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;

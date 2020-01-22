@@ -1,4 +1,4 @@
-package af.gov.anar.dck.common.model.dto;
+package af.gov.anar.dck.notification.websocket.dto;
 
 import af.gov.anar.dck.infrastructure.util.enumeration.InstanceHistoryStatus;
 import lombok.*;

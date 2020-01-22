@@ -1,20 +1,18 @@
 package af.gov.anar.dck.infrastructure.audit;
 
-import static af.gov.anar.dck.infrastructure.constant.ApplicationGenericConstants.APPLICATION_ID;
-import static af.gov.anar.dck.infrastructure.constant.ApplicationGenericConstants.APPLICATION_NAME;
+
 
 import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import af.gov.anar.dck.infrastructure.constant.ApplicationGenericConstants;
 import af.gov.anar.dck.useradministration.service.UserService;
 import af.gov.anar.lang.infrastructure.exception.common.ExceptionUtils;
 import af.gov.anar.lib.audit.builder.AuditRequestBuilder;
 import af.gov.anar.lib.audit.data.AuditRequestDto;
 import af.gov.anar.lib.audit.handler.AuditHandler;
 import af.gov.anar.lib.logger.Logger;
-import af.gov.anar.dck.infrastructure.service.BaseService;
-import af.gov.anar.dck.infrastructure.constant.ApplicationGenericConstants;
 import af.gov.anar.dck.infrastructure.enumeration.AuditEvent;
 import af.gov.anar.dck.infrastructure.enumeration.Components;
 import af.gov.anar.dck.infrastructure.service.HostService;
@@ -32,7 +30,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class AuditManagerSerivceImpl extends BaseService implements AuditManagerService{
+public class AuditManagerSerivceImpl implements AuditManagerService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuditManagerSerivceImpl.class);
 
@@ -70,14 +68,14 @@ public class AuditManagerSerivceImpl extends BaseService implements AuditManager
          hostName = hostService.getDefaultHostName();
 
         } catch (UnknownHostException unknownHostException) {
-            LOGGER.info("SERVICETE-TEMPLATE-AUDIT_FACTORY-AUDIT", APPLICATION_NAME, APPLICATION_ID,
+            LOGGER.info("SERVICETE-TEMPLATE-AUDIT_FACTORY-AUDIT", ApplicationGenericConstants.APPLICATION_NAME, ApplicationGenericConstants.APPLICATION_ID,
                     ExceptionUtils.getStackTrace(unknownHostException));
         }
 
         AuditRequestBuilder auditRequestBuilder = new AuditRequestBuilder();
         auditRequestBuilder.setActionTimeStamp(LocalDateTime.now(ZoneOffset.UTC))
-                .setApplicationId(String.valueOf(APPLICATION_ID))
-                .setApplicationName(String.valueOf(APPLICATION_NAME))
+                .setApplicationId(String.valueOf(ApplicationGenericConstants.APPLICATION_ID))
+                .setApplicationName(String.valueOf(ApplicationGenericConstants.APPLICATION_NAME))
                 .setCreatedBy(userService.getLoggedInUser().getUsername())
                 .setDescription(auditEventEnum.getDescription())
                 .setEventId(auditEventEnum.getId())

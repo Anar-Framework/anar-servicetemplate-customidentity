@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import af.gov.anar.dck.common.auth.InstanceAuthService;
 import af.gov.anar.dck.common.auth.UserAuthService;
-import af.gov.anar.dck.common.model.dto.Notification;
+import af.gov.anar.dck.notification.websocket.dto.Notification;
 import af.gov.anar.dck.form.model.Form;
 import af.gov.anar.dck.infrastructure.logger.Loggable;
 import af.gov.anar.dck.infrastructure.util.ExceptionUtil;

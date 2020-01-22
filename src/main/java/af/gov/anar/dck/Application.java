@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableApplicationName
-@ComponentScan(basePackages = {"af.*"})
+@ComponentScan(basePackages = {"af.*", "af.gov.anar.dck.infrastructure.*"})
 @EnableJpaRepositories(basePackages = {"af.*"})
 @EntityScan(basePackages = {"af.*"})
 @EnableAspectJAutoProxy(proxyTargetClass = true)
@@ -23,7 +23,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @Slf4j
 @EnableScheduling
 public class Application {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
