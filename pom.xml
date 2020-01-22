@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>af.gov.anar</groupId>
-	<artifactId>anar-datacollection-kit</artifactId>
+	<artifactId>anar-identity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anar-datacollection-kit</name>
-	<description>Data Collection Kit for Anar Framework</description>
+	<name>anar-identity</name>
+	<description>Identityt Module of Anar Framework</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
