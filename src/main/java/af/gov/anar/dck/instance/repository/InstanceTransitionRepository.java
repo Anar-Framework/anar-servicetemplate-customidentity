@@ -14,7 +14,7 @@ public interface InstanceTransitionRepository extends JpaRepository<InstanceTran
     public List<InstanceTransition> findByUserId(Long userId);
     public List<InstanceTransition> findByInstanceId(Long instanceId);
 
-    @Query("SELECT new af.gov.anar.dck.domain.model.InstanceTransition(it.id, it.user, it.previousStep, it.nextStep, it.resolution, it.remarks, it.createdAt, it.updatedAt) from InstanceTransition it left join it.instance i where it.instance.id=?1 order by it.id desc")
+    @Query("SELECT new af.gov.anar.dck.instance.model.InstanceTransition(it.id, it.user, it.previousStep, it.nextStep, it.resolution, it.remarks, it.createdAt, it.updatedAt) from InstanceTransition it left join it.instance i where it.instance.id=?1 order by it.id desc")
     public List<InstanceTransition> findByInstanceIdBrief(Long instanceId);
 
     @Query("DELETE from InstanceTransition it where it.instance.id=?1")

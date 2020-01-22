@@ -13,7 +13,7 @@ public interface InstanceWatcherRepository extends JpaRepository<InstanceWatcher
 
     List<InstanceWatcher> findByWatcherId(Long watcherId);
     List<InstanceWatcher> findByInstance(Instance instance);
-    @Query("SELECT new af.gov.anar.dck.domain.model.User(u.id, u.email, u.name) from User u inner join InstanceWatcher iw on u.username=iw.username where iw.instance.id = ?1 order by u.id")
+    @Query("SELECT new af.gov.anar.dck.useradministration.model.User(u.id, u.email, u.name) from User u inner join InstanceWatcher iw on u.username=iw.username where iw.instance.id = ?1 order by u.id")
 	public List<User> getWatchersEmailByInstanceId(Long instanceId);
 
 }

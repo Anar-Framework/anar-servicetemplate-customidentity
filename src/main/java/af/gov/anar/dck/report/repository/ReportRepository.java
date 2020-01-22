@@ -15,9 +15,9 @@ public interface ReportRepository extends JpaRepository<Report, Long> {
 
     public List<Report> findByFormId(Long formId);
 
-    @Query("SELECT new af.gov.anar.dck.domain.model.Report(r.id, r.name, r.description, r.envSlug, r.createdAt) from Report r where r.envSlug = ?1 order by r.id")
+    @Query("SELECT new af.gov.anar.dck.report.model.Report(r.id, r.name, r.description, r.envSlug, r.createdAt) from Report r where r.envSlug = ?1 order by r.id")
     public List<Report> findAllWithoutXMLContent(String envSlug);
 
-    @Query("SELECT new af.gov.anar.dck.domain.model.Report(r.id, r.name, r.description, r.envSlug, r.createdAt) from Form f INNER JOIN f.reports r where f.id = ?1 and r.envSlug = ?2 order by r.id")
+    @Query("SELECT new af.gov.anar.dck.report.model.Report(r.id, r.name, r.description, r.envSlug, r.createdAt) from Form f INNER JOIN f.reports r where f.id = ?1 and r.envSlug = ?2 order by r.id")
     public List<Report> findAllByFormWithoutXMLContent(Long formId, String envSlug);
 }

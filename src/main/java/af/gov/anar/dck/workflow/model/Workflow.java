@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package af.gov.anar.dck.workflow.model;
 
 import lombok.AllArgsConstructor;
@@ -16,10 +12,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- *
- * @author hpardess 2018
- */
+
 // @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -14,6 +14,6 @@ import java.util.List;
 public interface WorkflowRepository extends JpaRepository<Workflow, Long>{
     public List<Workflow> findByEnvSlug(String envSlug);
 
-    @Query("SELECT new af.gov.anar.dck.domain.model.Workflow(w.id, w.name, w.description, w.envSlug, w.createdAt) from Workflow w where w.envSlug = ?1 order by w.id")
+    @Query("SELECT new af.gov.anar.dck.workflow.model.Workflow(w.id, w.name, w.description, w.envSlug, w.createdAt) from Workflow w where w.envSlug = ?1 order by w.id")
 	public List<Workflow> findAllWithoutJSONContent(String envSlug);
 }
