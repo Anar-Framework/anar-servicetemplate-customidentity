@@ -1,9 +1,10 @@
 package af.gov.anar.dck.infrastructure.security;
 
-import af.gov.anar.dck.common.service.CustomDigestUserService;
-import af.gov.anar.dck.common.service.CustomUserService;
+
 import af.gov.anar.dck.infrastructure.security.JwtAuthenticationEntryPoint;
 import af.gov.anar.dck.infrastructure.security.JwtAuthenticationFilter;
+import af.gov.anar.dck.useradministration.service.CustomDigestUserService;
+import af.gov.anar.dck.useradministration.service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

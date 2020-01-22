@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package af.gov.anar.dck.report.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import af.gov.anar.dck.common.auth.ReportAuthService;
-import af.gov.anar.dck.common.config.aspect.Loggable;
 import af.gov.anar.dck.common.model.*;
-import af.gov.anar.dck.common.service.UserService;
+import af.gov.anar.dck.infrastructure.logger.Loggable;
+import af.gov.anar.dck.report.model.Report;
+import af.gov.anar.dck.useradministration.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

@@ -1,13 +1,15 @@
 package af.gov.anar.dck.common.auth;
 
-import af.gov.anar.dck.common.model.Form;
-import af.gov.anar.dck.common.model.User;
-import af.gov.anar.dck.common.service.OdkxDataService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.form.model.Form;
+import af.gov.anar.dck.odkx.service.OdkxDataService;
+import af.gov.anar.dck.useradministration.model.User;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;

@@ -1,11 +1,11 @@
-package af.gov.anar.dck.common.service.impl;
+package af.gov.anar.dck.datasource.service;
 
-import af.gov.anar.dck.common.model.Datasource;
-import af.gov.anar.dck.common.repository.DatasourceRepository;
-import af.gov.anar.dck.common.service.DatasourceService;
 import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.datasource.model.Datasource;
+import af.gov.anar.dck.datasource.repository.DatasourceRepository;
 
 import java.util.List;
 import java.util.Optional;

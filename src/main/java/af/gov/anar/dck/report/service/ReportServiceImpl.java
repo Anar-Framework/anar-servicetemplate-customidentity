@@ -1,11 +1,6 @@
 
-package af.gov.anar.dck.common.service.impl;
+package af.gov.anar.dck.report.service;
 
-import af.gov.anar.dck.common.config.aspect.Loggable;
-import af.gov.anar.dck.common.model.Report;
-import af.gov.anar.dck.report.repository.ReportRepository;
-import af.gov.anar.dck.common.service.ReportService;
-import af.gov.anar.dck.common.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.query.JRXPathQueryExecuterFactory;
@@ -16,6 +11,11 @@ import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
+
+import af.gov.anar.dck.infrastructure.logger.Loggable;
+import af.gov.anar.dck.report.model.Report;
+import af.gov.anar.dck.report.repository.ReportRepository;
+import af.gov.anar.dck.useradministration.service.UserService;
 
 import java.io.File;
 import java.io.IOException;

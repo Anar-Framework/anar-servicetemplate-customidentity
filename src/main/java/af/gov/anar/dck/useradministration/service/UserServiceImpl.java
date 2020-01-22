@@ -1,13 +1,14 @@
 package af.gov.anar.dck.useradministration.service;
 
-import af.gov.anar.dck.common.model.*;
+import af.gov.anar.dck.useradministration.model.CustomUser;
+import af.gov.anar.dck.useradministration.model.Environment;
+import af.gov.anar.dck.useradministration.model.Group;
+import af.gov.anar.dck.useradministration.model.PasswordResetToken;
+import af.gov.anar.dck.useradministration.model.User;
 import af.gov.anar.dck.useradministration.repository.PasswordResetTokenRepository;
 import af.gov.anar.dck.useradministration.repository.UserRepository;
-import af.gov.anar.dck.common.service.EnvironmentService;
-import af.gov.anar.dck.common.service.GroupService;
-import af.gov.anar.dck.common.service.UserService;
-import af.gov.anar.dck.common.util.EmailUtil;
-import af.gov.anar.dck.common.util.JsonParserUtil;
+import af.gov.anar.dck.infrastructure.util.EmailUtil;
+import af.gov.anar.dck.infrastructure.util.JsonParserUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;

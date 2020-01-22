@@ -1,8 +1,10 @@
 package af.gov.anar.dck.useradministration.repository;
 
-import af.gov.anar.dck.common.model.Group;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import af.gov.anar.dck.useradministration.model.Group;
 
 import java.util.List;
 

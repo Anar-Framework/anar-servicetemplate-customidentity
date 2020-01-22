@@ -1,8 +1,9 @@
-package af.gov.anar.dck.common.service;
+package af.gov.anar.dck.folder.service;
 
-import af.gov.anar.dck.folder.model.Folder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
+import af.gov.anar.dck.folder.model.Folder;
 
 import java.io.File;
 import java.util.List;

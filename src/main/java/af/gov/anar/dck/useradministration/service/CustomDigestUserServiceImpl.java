@@ -1,11 +1,11 @@
 package af.gov.anar.dck.useradministration.service;
 
-import af.gov.anar.dck.common.model.Group;
-import af.gov.anar.dck.common.model.Permission;
-import af.gov.anar.dck.common.model.Role;
-import af.gov.anar.dck.common.model.User;
+
+import af.gov.anar.dck.useradministration.model.Group;
+import af.gov.anar.dck.useradministration.model.Permission;
+import af.gov.anar.dck.useradministration.model.Role;
+import af.gov.anar.dck.useradministration.model.User;
 import af.gov.anar.dck.useradministration.repository.UserRepository;
-import af.gov.anar.dck.common.service.CustomDigestUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

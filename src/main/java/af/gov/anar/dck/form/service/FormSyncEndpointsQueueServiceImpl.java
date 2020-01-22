@@ -1,11 +1,12 @@
 package af.gov.anar.dck.form.service;
 
-import af.gov.anar.dck.common.model.Form;
-import af.gov.anar.dck.common.model.FormSyncEndpointsQueue;
-import af.gov.anar.dck.common.model.Instance;
+import af.gov.anar.dck.form.model.Form;
+import af.gov.anar.dck.form.model.FormSyncEndpointsQueue;
+import af.gov.anar.dck.infrastructure.util.enumeration.FormSyncStatus;
+import af.gov.anar.dck.instance.model.Instance;
+import af.gov.anar.dck.instance.service.InstanceService;
 import af.gov.anar.dck.form.repository.FormSyncEndpointsQueueRepository;
-import af.gov.anar.dck.common.service.InstanceService;
-import af.gov.anar.dck.common.util.enumeration.FormSyncStatus;
+import af.gov.anar.dck.infrastructure.util.enumeration.FormSyncStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;

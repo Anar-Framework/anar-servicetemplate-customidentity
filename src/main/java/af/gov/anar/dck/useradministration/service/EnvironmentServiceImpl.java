@@ -1,11 +1,12 @@
 package af.gov.anar.dck.useradministration.service;
 
-import af.gov.anar.dck.common.model.Environment;
-import af.gov.anar.dck.useradministration.repository.EnvironmentRepository;
-import af.gov.anar.dck.common.service.EnvironmentService;
+
 import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.useradministration.model.Environment;
+import af.gov.anar.dck.useradministration.repository.EnvironmentRepository;
 
 import java.util.List;
 import java.util.Optional;

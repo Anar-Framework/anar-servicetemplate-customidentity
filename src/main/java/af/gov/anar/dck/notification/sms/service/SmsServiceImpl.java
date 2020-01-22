@@ -1,15 +1,16 @@
-package af.gov.anar.dck.common.service.impl;
+package af.gov.anar.dck.notification.sms.service;
 
-import af.gov.anar.dck.notification.sms.model.Sms;
-import af.gov.anar.dck.notification.sms.repository.SmsRepository;
-import af.gov.anar.dck.notification.sms.service.SmsService;
-import af.gov.anar.dck.common.service.UserService;
-import af.gov.anar.dck.common.util.DataTablesUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.infrastructure.util.DataTablesUtil;
+import af.gov.anar.dck.notification.sms.model.Sms;
+import af.gov.anar.dck.notification.sms.repository.SmsRepository;
+import af.gov.anar.dck.useradministration.service.UserService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

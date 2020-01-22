@@ -1,6 +1,8 @@
 package af.gov.anar.dck.form.model;
 
 import af.gov.anar.dck.instance.model.Instance;
+import af.gov.anar.dck.report.model.Report;
+import af.gov.anar.dck.systemregistry.model.SystemRegistry;
 import af.gov.anar.dck.useradministration.model.Group;
 import af.gov.anar.dck.workflow.model.Workflow;
 

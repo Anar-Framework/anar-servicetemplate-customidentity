@@ -1,16 +1,16 @@
-package af.gov.anar.dck.common.controller;
+package af.gov.anar.dck.notification.sms.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import af.gov.anar.dck.common.auth.UserAuthService;
-import af.gov.anar.dck.common.model.Environment;
 import af.gov.anar.dck.notification.sms.model.Sms;
-import af.gov.anar.dck.common.model.User;
-import af.gov.anar.dck.common.service.EnvironmentService;
 import af.gov.anar.dck.notification.sms.service.SmsService;
-import af.gov.anar.dck.common.service.UserService;
-import af.gov.anar.dck.common.util.DateTimeUtil;
-import af.gov.anar.dck.common.util.ExceptionUtil;
-import af.gov.anar.dck.common.util.JsonParserUtil;
+import af.gov.anar.dck.useradministration.model.Environment;
+import af.gov.anar.dck.useradministration.model.User;
+import af.gov.anar.dck.useradministration.service.EnvironmentService;
+import af.gov.anar.dck.useradministration.service.UserService;
+import af.gov.anar.dck.infrastructure.util.DateTimeUtil;
+import af.gov.anar.dck.infrastructure.util.ExceptionUtil;
+import af.gov.anar.dck.infrastructure.util.JsonParserUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;

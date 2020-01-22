@@ -1,7 +1,7 @@
 package af.gov.anar.dck.useradministration.api;
 
 import af.gov.anar.dck.common.auth.EnvironmentAuthService;
-import af.gov.anar.dck.common.model.Environment;
+import af.gov.anar.dck.useradministration.model.Environment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

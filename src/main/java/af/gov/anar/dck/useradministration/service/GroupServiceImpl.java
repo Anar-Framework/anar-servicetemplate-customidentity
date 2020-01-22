@@ -1,10 +1,9 @@
 package af.gov.anar.dck.useradministration.service;
 
-import af.gov.anar.dck.common.model.Group;
-import af.gov.anar.dck.common.model.User;
+import af.gov.anar.dck.useradministration.model.Group;
+import af.gov.anar.dck.useradministration.model.User;
 import af.gov.anar.dck.useradministration.repository.GroupRepository;
 import af.gov.anar.dck.useradministration.repository.UserRepository;
-import af.gov.anar.dck.common.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

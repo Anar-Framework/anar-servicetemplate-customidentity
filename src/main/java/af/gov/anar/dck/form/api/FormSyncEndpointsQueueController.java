@@ -1,11 +1,11 @@
 package af.gov.anar.dck.form.api;
 
+import af.gov.anar.dck.form.model.FormSyncEndpointsQueue;
+import af.gov.anar.dck.form.service.FormService;
+import af.gov.anar.dck.useradministration.service.UserService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import af.gov.anar.dck.common.auth.UserAuthService;
-import af.gov.anar.dck.common.model.FormSyncEndpointsQueue;
-import af.gov.anar.dck.common.service.FormService;
-import af.gov.anar.dck.common.service.UserService;
 import af.gov.anar.dck.form.service.FormSyncEndpointsQueueServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,7 +27,7 @@ public class FormSyncEndpointsQueueController{
     private FormSyncEndpointsQueueServiceImpl formSyncEndpointsQueueService;
 
     @Autowired
-    private  FormService formService;
+    private FormService formService;
 
     @Autowired
     private UserService userService;

@@ -1,14 +1,18 @@
 package af.gov.anar.dck.instance.service;
 
-import af.gov.anar.dck.common.model.Instance;
-import af.gov.anar.dck.common.model.InstanceHistory;
-import af.gov.anar.dck.common.model.InstanceWatcher;
-import af.gov.anar.dck.common.model.User;
+import af.gov.anar.dck.instance.model.Instance;
+import af.gov.anar.dck.instance.model.InstanceAttachment;
+import af.gov.anar.dck.instance.model.InstanceComment;
+import af.gov.anar.dck.instance.model.InstanceHistory;
+import af.gov.anar.dck.instance.model.InstanceTransition;
+import af.gov.anar.dck.instance.model.InstanceWatcher;
+import af.gov.anar.dck.instance.repository.InstanceCommentRepository;
+import af.gov.anar.dck.useradministration.model.User;
+import af.gov.anar.dck.useradministration.service.UserService;
+
 import af.gov.anar.dck.instance.repository.InstanceHistoryRepository;
 import af.gov.anar.dck.instance.repository.InstanceWatcherRepository;
-import af.gov.anar.dck.common.service.InstanceWatcherService;
-import af.gov.anar.dck.common.service.UserService;
-import af.gov.anar.dck.common.util.EmailUtil;
+import af.gov.anar.dck.infrastructure.util.EmailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;

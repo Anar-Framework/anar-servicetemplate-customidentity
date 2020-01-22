@@ -1,8 +1,9 @@
 package af.gov.anar.dck.folder.api;
 
-import af.gov.anar.dck.common.config.aspect.Loggable;
 import af.gov.anar.dck.folder.model.Folder;
 import af.gov.anar.dck.folder.service.FolderService;
+import af.gov.anar.dck.infrastructure.logger.Loggable;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

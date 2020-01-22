@@ -1,9 +1,10 @@
 package af.gov.anar.dck.useradministration.service;
 
 
+import af.gov.anar.dck.useradministration.model.Permission;
+import af.gov.anar.dck.useradministration.model.User;
 import af.gov.anar.dck.useradministration.repository.PermissionRepository;
 import af.gov.anar.dck.useradministration.repository.UserRepository;
-import af.gov.anar.dck.common.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

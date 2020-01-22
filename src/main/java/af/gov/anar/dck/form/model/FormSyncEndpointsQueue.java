@@ -1,6 +1,6 @@
 package af.gov.anar.dck.form.model;
 
-import af.gov.anar.dck.common.util.enumeration.FormSyncStatus;
+import af.gov.anar.dck.infrastructure.util.enumeration.FormSyncStatus;
 import af.gov.anar.dck.instance.model.Instance;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

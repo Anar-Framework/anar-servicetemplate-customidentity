@@ -1,12 +1,13 @@
 package af.gov.anar.dck.common.auth;
 
-import af.gov.anar.dck.common.model.Report;
-import af.gov.anar.dck.common.service.ReportService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.report.model.Report;
+import af.gov.anar.dck.report.service.ReportService;
 
 import java.util.List;
 

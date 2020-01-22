@@ -1,4 +1,5 @@
-package af.gov.anar.dck.common.model;
+package af.gov.anar.dck.folder.model;
+
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

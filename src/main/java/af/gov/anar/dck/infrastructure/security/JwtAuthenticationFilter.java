@@ -1,7 +1,7 @@
 package af.gov.anar.dck.infrastructure.security;
 
-import af.gov.anar.dck.common.model.CustomUser;
-import af.gov.anar.dck.common.service.CustomUserService;
+import af.gov.anar.dck.useradministration.model.CustomUser;
+import af.gov.anar.dck.useradministration.service.CustomUserService;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
 import org.springframework.beans.factory.annotation.Autowired;

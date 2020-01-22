@@ -1,8 +1,9 @@
 package af.gov.anar.dck.workflow.util;
 
 
-import af.gov.anar.dck.common.exception.IncorrectIndexException;
-import af.gov.anar.dck.common.model.Group;
+import af.gov.anar.dck.infrastructure.exception.IncorrectIndexException;
+import af.gov.anar.dck.useradministration.model.Group;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

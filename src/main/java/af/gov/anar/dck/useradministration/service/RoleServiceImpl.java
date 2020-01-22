@@ -1,10 +1,11 @@
 package af.gov.anar.dck.useradministration.service;
 
-import af.gov.anar.dck.common.model.Role;
-import af.gov.anar.dck.useradministration.repository.RoleRepository;
-import af.gov.anar.dck.common.service.RoleService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.useradministration.model.Role;
+import af.gov.anar.dck.useradministration.repository.RoleRepository;
 
 import java.util.List;
 

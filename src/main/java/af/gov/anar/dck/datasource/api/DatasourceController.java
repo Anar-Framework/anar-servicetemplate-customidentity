@@ -1,9 +1,10 @@
-package af.gov.anar.dck.common.controller;
+package af.gov.anar.dck.datasource.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import af.gov.anar.dck.common.auth.DatasourceAuthService;
-import af.gov.anar.dck.common.model.Datasource;
-import af.gov.anar.dck.common.service.UserService;
+import af.gov.anar.dck.datasource.model.Datasource;
+import af.gov.anar.dck.useradministration.service.UserService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

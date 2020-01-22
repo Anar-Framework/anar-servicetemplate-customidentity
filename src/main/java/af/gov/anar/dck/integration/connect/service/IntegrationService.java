@@ -1,8 +1,8 @@
-package af.gov.anar.dck.common.service.integration;
+package af.gov.anar.dck.integration.connect.service;
 
 
-import af.gov.anar.dck.common.config.aspect.Loggable;
-import af.gov.anar.dck.common.util.JsonParserUtil;
+import af.gov.anar.dck.infrastructure.logger.Loggable;
+import af.gov.anar.dck.infrastructure.util.JsonParserUtil;
 import org.sourcelab.kafka.connect.apiclient.Configuration;
 import org.sourcelab.kafka.connect.apiclient.KafkaConnectClient;
 import org.sourcelab.kafka.connect.apiclient.request.dto.*;

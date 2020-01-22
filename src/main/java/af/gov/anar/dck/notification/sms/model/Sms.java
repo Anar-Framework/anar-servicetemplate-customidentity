@@ -1,4 +1,4 @@
-package af.gov.anar.dck.common.model;
+package af.gov.anar.dck.notification.sms.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

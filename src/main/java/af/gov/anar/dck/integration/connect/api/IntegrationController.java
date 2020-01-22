@@ -1,7 +1,7 @@
-package af.gov.anar.dck.common.controller.integration;
+package af.gov.anar.dck.integration.connect.api;
 
 import af.gov.anar.dck.integration.connect.service.IntegrationService;
-import af.gov.anar.dck.common.util.JsonParserUtil;
+import af.gov.anar.dck.infrastructure.util.JsonParserUtil;
 import org.json.JSONObject;
 import org.sourcelab.kafka.connect.apiclient.request.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;

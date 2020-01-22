@@ -1,12 +1,12 @@
-package af.gov.anar.dck.common.service.impl;
+package af.gov.anar.dck.folder.service;
 
 
 import af.gov.anar.dck.common.auth.UserAuthService;
 import af.gov.anar.dck.folder.model.Folder;
 import af.gov.anar.dck.folder.repository.FolderRepository;
 import af.gov.anar.dck.folder.service.FolderService;
-import af.gov.anar.dck.common.service.UserService;
-import af.gov.anar.dck.common.util.DateTimeUtil;
+import af.gov.anar.dck.infrastructure.util.DateTimeUtil;
+import af.gov.anar.dck.useradministration.service.UserService;
 import af.gov.anar.dck.form.service.FormServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

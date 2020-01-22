@@ -1,9 +1,10 @@
-package af.gov.anar.dck.common.service.impl;
+package af.gov.anar.dck.systemregistry.service;
 
-import af.gov.anar.dck.common.model.SystemRegistry;
+
+import af.gov.anar.dck.systemregistry.model.SystemRegistry;
 import af.gov.anar.dck.systemregistry.repository.SystemRegistryRepository;
-import af.gov.anar.dck.common.service.SystemRegistryService;
-import af.gov.anar.dck.common.service.UserService;
+import af.gov.anar.dck.useradministration.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

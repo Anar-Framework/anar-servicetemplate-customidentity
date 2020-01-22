@@ -1,8 +1,10 @@
 package af.gov.anar.dck.instance.repository;
 
-import af.gov.anar.dck.common.model.Instance;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import af.gov.anar.dck.instance.model.Instance;
 
 import java.util.List;
 

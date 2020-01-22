@@ -1,6 +1,6 @@
 package af.gov.anar.dck.common.model.dto;
 
-import af.gov.anar.dck.common.util.enumeration.InstanceHistoryStatus;
+import af.gov.anar.dck.infrastructure.util.enumeration.InstanceHistoryStatus;
 import lombok.*;
 
 /**

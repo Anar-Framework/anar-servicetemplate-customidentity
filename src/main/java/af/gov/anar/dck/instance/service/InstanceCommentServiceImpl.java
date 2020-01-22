@@ -1,10 +1,10 @@
 package af.gov.anar.dck.instance.service;
-
-import af.gov.anar.dck.common.model.Instance;
-import af.gov.anar.dck.common.model.InstanceComment;
+import af.gov.anar.dck.instance.model.Instance;
+import af.gov.anar.dck.instance.model.InstanceAttachment;
+import af.gov.anar.dck.instance.model.InstanceComment;
 import af.gov.anar.dck.instance.repository.InstanceCommentRepository;
-import af.gov.anar.dck.common.service.InstanceCommentService;
-import af.gov.anar.dck.common.service.UserService;
+import af.gov.anar.dck.useradministration.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

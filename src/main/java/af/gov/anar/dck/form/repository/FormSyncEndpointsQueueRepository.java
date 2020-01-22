@@ -1,9 +1,11 @@
 package af.gov.anar.dck.form.repository;
 
-import af.gov.anar.dck.common.model.Form;
-import af.gov.anar.dck.common.model.FormSyncEndpointsQueue;
-import af.gov.anar.dck.common.model.Instance;
-import af.gov.anar.dck.common.util.enumeration.FormSyncStatus;
+
+import af.gov.anar.dck.form.model.Form;
+import af.gov.anar.dck.form.model.FormSyncEndpointsQueue;
+import af.gov.anar.dck.infrastructure.util.enumeration.FormSyncStatus;
+import af.gov.anar.dck.instance.model.Instance;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

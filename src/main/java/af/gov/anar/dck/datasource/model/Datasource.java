@@ -1,5 +1,4 @@
-package af.gov.anar.dck.domain.model;
-
+package af.gov.anar.dck.datasource.model;
 import lombok.*;
 
 import javax.persistence.*;

@@ -1,11 +1,13 @@
 package af.gov.anar.dck.useradministration.repository;
 
-import af.gov.anar.dck.common.model.Group;
-import af.gov.anar.dck.common.model.User;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import af.gov.anar.dck.useradministration.model.Group;
+import af.gov.anar.dck.useradministration.model.User;
 
 import javax.transaction.Transactional;
 import java.util.List;

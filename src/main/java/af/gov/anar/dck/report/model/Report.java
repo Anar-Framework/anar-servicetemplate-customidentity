@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package af.gov.anar.dck.common.model;
+
+package af.gov.anar.dck.report.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -13,13 +9,11 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
 
+import af.gov.anar.dck.form.model.Form;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- *
- * @author HPardess 2019
- */
 // @Data
 @AllArgsConstructor
 @NoArgsConstructor

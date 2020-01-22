@@ -1,7 +1,8 @@
 package af.gov.anar.dck.instance.repository;
 
-import af.gov.anar.dck.common.model.InstanceHistory;
-import af.gov.anar.dck.common.util.enumeration.InstanceHistoryStatus;
+import af.gov.anar.dck.infrastructure.util.enumeration.InstanceHistoryStatus;
+import af.gov.anar.dck.instance.model.InstanceHistory;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

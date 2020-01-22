@@ -1,16 +1,24 @@
-package af.gov.anar.dck.common.controller;
+package af.gov.anar.dck.odkx.api;
 
-import af.gov.anar.dck.common.exception.odkx.*;
+import af.gov.anar.dck.infrastructure.exception.odkx.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import af.gov.anar.dck.common.auth.FormAuthService;
 import af.gov.anar.dck.common.auth.OdkxDataAuthService;
-import af.gov.anar.dck.common.model.Form;
-import af.gov.anar.dck.common.model.User;
-import af.gov.anar.dck.odkx.odkx.*;
-import af.gov.anar.dck.common.service.CustomDigestUserService;
-import af.gov.anar.dck.common.service.UserService;
-import af.gov.anar.dck.common.util.DateTimeUtil;
-import af.gov.anar.dck.common.util.EmailUtil;
+import af.gov.anar.dck.form.model.Form;
+import af.gov.anar.dck.infrastructure.util.DateTimeUtil;
+import af.gov.anar.dck.infrastructure.util.EmailUtil;
+import af.gov.anar.dck.odkx.data.ClientVersionList;
+import af.gov.anar.dck.odkx.data.OdkTablesFileManifest;
+import af.gov.anar.dck.odkx.data.OdkTablesFileManifestEntry;
+import af.gov.anar.dck.odkx.data.PrivilegesInfo;
+import af.gov.anar.dck.odkx.data.RowList;
+import af.gov.anar.dck.odkx.data.UserInfo;
+import af.gov.anar.dck.odkx.data.UserInfoList;
+import af.gov.anar.dck.useradministration.model.User;
+import af.gov.anar.dck.useradministration.service.CustomDigestUserService;
+import af.gov.anar.dck.useradministration.service.UserService;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -45,7 +53,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/odkx/odktables")
 public class ODKXController {
 
-    Logger logger = LoggerFactory.getLogger(ODKController.class);
+    Logger logger = LoggerFactory.getLogger(ODKXController.class);
     String preferencesAppId = "default";
 
     @Value("${spring.mail.to}")

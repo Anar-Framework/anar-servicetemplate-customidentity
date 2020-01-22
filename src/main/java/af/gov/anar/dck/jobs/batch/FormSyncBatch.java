@@ -1,10 +1,10 @@
 package af.gov.anar.dck.jobs.batch;
 
+import af.gov.anar.dck.form.model.FormSyncEndpointsQueue;
+import af.gov.anar.dck.instance.model.Instance;
 import af.gov.anar.dck.jobs.service.JobSchedularService;
-import af.gov.anar.dck.common.model.FormSyncEndpointsQueue;
-import af.gov.anar.dck.common.model.Instance;
 import af.gov.anar.dck.form.service.FormSyncEndpointsQueueServiceImpl;
-import af.gov.anar.dck.common.util.enumeration.FormSyncStatus;
+import af.gov.anar.dck.infrastructure.util.enumeration.FormSyncStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;

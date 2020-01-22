@@ -1,5 +1,4 @@
-package af.gov.anar.dck.common.repository;
-
+package af.gov.anar.dck.folder.repository;
 import af.gov.anar.dck.folder.model.Folder;
 import org.springframework.data.jpa.repository.JpaRepository;
 

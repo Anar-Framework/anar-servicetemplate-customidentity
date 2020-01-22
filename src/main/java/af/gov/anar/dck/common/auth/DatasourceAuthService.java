@@ -1,12 +1,13 @@
-package af.gov.anar.dck.domain.auth;
+package af.gov.anar.dck.common.auth;
 
-import af.gov.anar.dck.datasource.model.Datasource;
-import af.gov.anar.dck.domain.service.DatasourceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.datasource.model.Datasource;
+import af.gov.anar.dck.datasource.service.DatasourceService;
 
 import java.util.List;
 

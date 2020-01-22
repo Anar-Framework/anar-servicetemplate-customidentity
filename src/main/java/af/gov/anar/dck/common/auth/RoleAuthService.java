@@ -1,12 +1,14 @@
 package af.gov.anar.dck.common.auth;
 
-import af.gov.anar.dck.common.model.Role;
-import af.gov.anar.dck.common.service.RoleService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.useradministration.model.Role;
+import af.gov.anar.dck.useradministration.service.RoleService;
 
 import java.util.List;
 

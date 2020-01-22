@@ -1,6 +1,7 @@
 package af.gov.anar.dck.infrastructure.security;
 
-import af.gov.anar.dck.common.model.CustomUser;
+
+import af.gov.anar.dck.useradministration.model.CustomUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -1,8 +1,15 @@
 package af.gov.anar.dck.instance.service;
 
-import af.gov.anar.dck.common.model.InstanceTransition;
+import af.gov.anar.dck.instance.model.Instance;
+import af.gov.anar.dck.instance.model.InstanceAttachment;
+import af.gov.anar.dck.instance.model.InstanceComment;
+import af.gov.anar.dck.instance.model.InstanceHistory;
+import af.gov.anar.dck.instance.model.InstanceTransition;
+import af.gov.anar.dck.instance.repository.InstanceCommentRepository;
 import af.gov.anar.dck.instance.repository.InstanceTransitionRepository;
-import af.gov.anar.dck.common.service.InstanceTransitionService;
+import af.gov.anar.dck.useradministration.model.User;
+import af.gov.anar.dck.useradministration.service.UserService;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,9 @@
-package af.gov.anar.dck.common.service;
+package af.gov.anar.dck.notification.sms.service;
 
-import af.gov.anar.dck.notification.sms.model.Sms;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 import org.springframework.stereotype.Service;
+
+import af.gov.anar.dck.notification.sms.model.Sms;
 
 import java.util.List;
 

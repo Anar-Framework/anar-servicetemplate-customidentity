@@ -1,7 +1,9 @@
-package af.gov.anar.dck.common.repository;
+package af.gov.anar.dck.systemregistry.repository;
 
-import af.gov.anar.dck.common.model.SystemRegistry;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import af.gov.anar.dck.systemregistry.model.SystemRegistry;
 
 import java.util.List;
 

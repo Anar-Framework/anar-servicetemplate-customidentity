@@ -1,21 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package af.gov.anar.dck.workflow.repository;
 
-import af.gov.anar.dck.common.model.Workflow;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import af.gov.anar.dck.workflow.model.Workflow;
+
 import java.util.List;
 
-/**
- *
- * @author hp 2018
- */
+
 @Repository
 public interface WorkflowRepository extends JpaRepository<Workflow, Long>{
     public List<Workflow> findByEnvSlug(String envSlug);

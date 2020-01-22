@@ -14,7 +14,7 @@
  * the License.
  */
 
-package af.gov.anar.dck.common.model.odkx;
+ package af.gov.anar.dck.odkx.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
