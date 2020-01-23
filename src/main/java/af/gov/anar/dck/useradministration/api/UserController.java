@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.handler.ResponseHandler;
 import af.gov.anar.dck.infrastructure.logger.Loggable;
 import af.gov.anar.dck.useradministration.model.Group;
 import af.gov.anar.dck.useradministration.service.GroupService;
@@ -29,7 +30,7 @@ import java.util.List;
 @RestController
 @RequestMapping({ "/api/users" })
 
-public class UserController {
+public class UserController  extends ResponseHandler {
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 

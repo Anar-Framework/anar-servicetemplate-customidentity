@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.model;
 
+import af.gov.anar.dck.infrastructure.revision.AuditEnabledEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -21,7 +24,8 @@ import java.util.Set;
 // @EqualsAndHashCode
 @Entity
 @Table(name = "environment")
-public class Environment {
+@Audited
+public class Environment extends AuditEnabledEntity {
  
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "environment_generator")
@@ -54,6 +58,7 @@ public class Environment {
 	
 	@ManyToMany(mappedBy = "environments")
     @JsonIgnore
+	@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
 	private Set<User> users;
  
 	public Environment(String name, String description) {

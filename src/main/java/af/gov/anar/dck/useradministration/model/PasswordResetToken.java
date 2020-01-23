@@ -1,8 +1,10 @@
 package af.gov.anar.dck.useradministration.model;
 
+import af.gov.anar.dck.infrastructure.revision.AuditEnabledEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +15,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "password_reset_token")
-public class PasswordResetToken {
+@Audited
+public class PasswordResetToken extends AuditEnabledEntity {
   
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -87,7 +87,7 @@ public class UserServiceImpl implements UserService {
 
 				if (jsonObj.has("password")) {
 					user.setPassword(jsonObj.isNull("password") ? "" : jsonObj.getString("password").trim());
-					user.setOdkPassword(user.getPassword());
+					user.setPassword(user.getPassword());
 				}
 
 				if (jsonObj.has("confirm_password"))
@@ -148,10 +148,7 @@ public class UserServiceImpl implements UserService {
 	public List<User> findAllByEnv(String envSlug) {
 		List<User> users = userRepository.findAllByEnvSlug(envSlug);
 		users.forEach(user -> {
-			String odkPass = user.getOdkPassword();
-			if (odkPass != null && odkPass.length() > 0) {
-				user.setHasOdkPassword(true);
-			}
+			String odkPass = user.getPassword();
 		});
 
 		return users;
@@ -161,10 +158,7 @@ public class UserServiceImpl implements UserService {
 	public List<User> findAll_Calc() {
 		List<User> users = userRepository.findAll();
 		users.forEach(user -> {
-			String odkPass = user.getOdkPassword();
-			if (odkPass != null && odkPass.length() > 0) {
-				user.setHasOdkPassword(true);
-			}
+			String odkPass = user.getPassword();
 		});
 
 		return users;
@@ -174,11 +168,6 @@ public class UserServiceImpl implements UserService {
 	public User findById(Long id) {
 		Optional<User> optionalObj = userRepository.findById(id);
 		User user = optionalObj.get();
-
-		String odkPass = user.getOdkPassword();
-		if (odkPass != null && odkPass.length() > 0) {
-			user.setHasOdkPassword(true);
-		}
 		return user;
 	}
 
@@ -186,10 +175,7 @@ public class UserServiceImpl implements UserService {
 	public User findByUsername(String username) {
 		User user = userRepository.findByUsername(username);
 
-		String odkPass = user.getOdkPassword();
-		if (odkPass != null && odkPass.length() > 0) {
-			user.setHasOdkPassword(true);
-		}
+		String odkPass = user.getPassword();
 		return user;
 	}
 
@@ -335,14 +321,13 @@ public class UserServiceImpl implements UserService {
 	public boolean updateUserOdkPassword(String currentPassword, String newPassword) {
 		User loggedInUser = getLoggedInUser();
 
-		if(currentPassword.equals(loggedInUser.getOdkPassword()) ) {
-			loggedInUser.setOdkPassword(newPassword);
+		if(currentPassword.equals(loggedInUser.getPassword()) ) {
 			userRepository.save(loggedInUser);
 			return true;
 		} else {
 		return false;
 		}
-}
+	}
 
 	@Override
 	public User findByEmail(String email) {

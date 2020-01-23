@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.model;
 
+import af.gov.anar.dck.infrastructure.revision.AuditEnabledEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.envers.Audited;
 import org.springframework.security.core.GrantedAuthority;
 
 
@@ -26,7 +28,8 @@ import java.util.HashSet;
 // @EqualsAndHashCode
 @Entity(name = "User")
 @Table(name = "user_tbl")
-public class User {
+@Audited
+public class User extends AuditEnabledEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_tbl_generator")
@@ -61,12 +64,7 @@ public class User {
     @JsonIgnore
     private String password;
 
-    @Size(min = 3, max = 100, message = "Password must at least 3 characters.")
-    @JsonIgnore
-    private String odkPassword;
 
-    @Transient
-    private boolean hasOdkPassword;
 
     @Transient
     @JsonIgnore
@@ -111,7 +109,7 @@ public class User {
         this.name = name;
     }
 
-    public User(Long id, String name, String address, String username, boolean active, String odkPassword, String email,
+    public User(Long id, String name, String address, String username, boolean active, String email,
             String avatar, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
@@ -120,10 +118,7 @@ public class User {
         this.active = active;
         this.email = email;
 
-        this.hasOdkPassword = false;
-        if (odkPassword != null && odkPassword.length() > 0) {
-            this.hasOdkPassword = true;
-        }
+
         this.avatar = avatar;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;

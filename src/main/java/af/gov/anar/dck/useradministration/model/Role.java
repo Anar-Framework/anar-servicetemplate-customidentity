@@ -1,10 +1,13 @@
 package af.gov.anar.dck.useradministration.model;
 
+import af.gov.anar.dck.infrastructure.revision.AuditEnabledEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -18,7 +21,8 @@ import java.util.Collection;
 // @EqualsAndHashCode
 @Entity(name = "Role")
 @Table(name="role")
-public class Role {
+@Audited
+public class Role extends AuditEnabledEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_generator")
@@ -40,6 +44,7 @@ public class Role {
 	
 	@ManyToMany(mappedBy = "roles")
 	@JsonIgnore
+	@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private Collection<Group> groups;
 
 	@ManyToMany(fetch=FetchType.LAZY)
@@ -47,6 +52,7 @@ public class Role {
         joinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"), 
         inverseJoinColumns = @JoinColumn(name = "permission_id", referencedColumnName = "id"))
     @JsonIgnore
+	@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private Collection<Permission> permissions; 
     
     public Role(Long id,String name,String desc, Collection<Permission> permissions)

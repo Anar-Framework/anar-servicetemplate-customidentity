@@ -19,7 +19,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
     User findByEmail(String email);
 
-    @Query("SELECT new af.gov.anar.dck.useradministration.model.User(u.id, u.name, u.address, u.username, u.active, u.odkPassword, u.email, u.avatar, u.createdAt, u.updatedAt) from User u INNER JOIN u.environments e where e.slug=?1 order by u.id")
+    @Query("SELECT new af.gov.anar.dck.useradministration.model.User(u.id, u.name, u.address, u.username, u.active, u.email, u.avatar, u.createdAt, u.updatedAt) from User u INNER JOIN u.environments e where e.slug=?1 order by u.id")
     public List<User> findAllByEnvSlug(String envSlug);
 
     // @Query("SELECT * from User u INNER JOIN u.groups g where u.username = ?1 and g.envSlug = ?2")

@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.handler.ResponseHandler;
 import af.gov.anar.dck.infrastructure.security.JwtTokenUtil;
 import af.gov.anar.dck.useradministration.model.CustomUser;
 import af.gov.anar.dck.useradministration.model.Environment;
@@ -46,7 +47,7 @@ import java.util.*;
 @RestController
 @RequestMapping({"/api"})
 @Slf4j
-public class AuthController {
+public class AuthController extends ResponseHandler {
 
     Logger logger = LoggerFactory.getLogger(AuthController.class);
     

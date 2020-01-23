@@ -43,7 +43,7 @@ public class CustomDigestUserServiceImpl implements CustomDigestUserService {
 		 }
 	
 		 UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getUsername(), 
-				 user.getOdkPassword(), user.isActive(), true, true, true, 
+				 user.getPassword(), user.isActive(), true, true, true,
 				//  getAuthorities(user.getGroups()));
 				getAuthorities(user.getGroups()));
  

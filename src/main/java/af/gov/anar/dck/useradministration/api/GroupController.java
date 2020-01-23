@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.handler.ResponseHandler;
 import af.gov.anar.dck.useradministration.model.*;
 import af.gov.anar.dck.useradministration.service.RoleService;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -23,7 +24,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/groups")
 
-public class GroupController {
+public class GroupController extends ResponseHandler {
 
 	Logger logger = LoggerFactory.getLogger(GroupController.class);
 	ObjectMapper mapper = new ObjectMapper();
