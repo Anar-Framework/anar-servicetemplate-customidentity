@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
 import af.gov.anar.dck.useradministration.service.PermissionService;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping({ "/api/permissions" })
-
+@EnableApiFactory
 public class PermissionController extends ResponseHandler {
 
 	@Autowired

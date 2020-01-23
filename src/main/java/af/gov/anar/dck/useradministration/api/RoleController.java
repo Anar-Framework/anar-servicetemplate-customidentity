@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
 import af.gov.anar.dck.useradministration.model.*;
 import af.gov.anar.dck.useradministration.service.PermissionService;
@@ -23,7 +24,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/roles")
-
+@EnableApiFactory
 public class RoleController  extends ResponseHandler {
 
 	Logger logger = LoggerFactory.getLogger(RoleController.class);

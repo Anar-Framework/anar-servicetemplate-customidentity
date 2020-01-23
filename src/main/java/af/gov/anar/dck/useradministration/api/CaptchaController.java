@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +18,7 @@ import java.util.Map;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/captcha")
+@EnableApiFactory
 public class CaptchaController extends ResponseHandler {
 
     @Value("${captcha.privateKey}")

@@ -1,5 +1,6 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
 import af.gov.anar.dck.common.auth.EnvironmentAuthService;
 import af.gov.anar.dck.useradministration.model.Environment;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping({"/api/environments"})
-
+@EnableApiFactory
 public class EnvironmentController extends ResponseHandler {
     
 	Logger logger = LoggerFactory.getLogger(EnvironmentController.class);
