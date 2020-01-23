@@ -12,7 +12,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import af.gov.anar.dck.common.auth.UserAuthService;
-import af.gov.anar.dck.infrastructure.event.service.EventLogServiceImpl;
 import af.gov.anar.dck.infrastructure.util.EmailUtil;
 import af.gov.anar.dck.infrastructure.util.LoggerLevel;
 import lombok.extern.slf4j.Slf4j;
@@ -57,8 +56,6 @@ public class AuthController {
     @Value("${app.url}")
     private String appUrl;
 
-    @Autowired
-    private EventLogServiceImpl eventLogService;
 
 	@Autowired
     private UserAuthService userAuthService;
@@ -102,7 +99,6 @@ public class AuthController {
         Map<String, Object> result = new HashMap<>();
         result.put("token", token);
 
-        eventLogService.log(userService.getLoggedInUser().getId(), customUser.getCurrentEnv() ,this.getClass().getName() , LoggerLevel.INFO.toString(), null, userService.getLoggedInUser().toString());
 
         return ResponseEntity.ok(result);
     }

@@ -6,13 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Query builder used to create the comman part of the query for all the queries
- *
- * @author Jalil Haidari
- */
-
-
  @Component
 public class QueryBuilderUtil {
     public String buildQuery(DataTablesInput input, String tableName) {
