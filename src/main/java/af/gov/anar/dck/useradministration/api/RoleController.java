@@ -1,7 +1,12 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.annotation.ThrowsException;
+import af.gov.anar.api.annotation.ThrowsExceptions;
 import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
+import af.gov.anar.dck.infrastructure.exception.InternalServerProblemException;
+import af.gov.anar.dck.infrastructure.exception.ResourceNotFoundException;
+import af.gov.anar.dck.infrastructure.exception.SubmissionException;
 import af.gov.anar.dck.useradministration.model.*;
 import af.gov.anar.dck.useradministration.service.PermissionService;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -16,6 +21,7 @@ import af.gov.anar.dck.useradministration.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -47,6 +53,11 @@ public class RoleController  extends ResponseHandler {
 	}
 
 	@PostMapping
+	@ThrowsExceptions({
+			@ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+			@ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+			@ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+	})
 	public Role postRole(@Valid @RequestBody String role) {
 		// create a new role and return it
 		Gson g = new Gson();
@@ -56,6 +67,10 @@ public class RoleController  extends ResponseHandler {
 	}
 
 	@GetMapping(value = "/{id}")
+	@ThrowsExceptions({
+			@ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+			@ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+	})
 	public ObjectNode getRoleById(@PathVariable(value = "id") Long id) {
 
 		Role role = roleAuthService.findById(id);
@@ -74,6 +89,11 @@ public class RoleController  extends ResponseHandler {
 	}
 
 	@PutMapping(value = "/{id}")
+	@ThrowsExceptions({
+			@ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+			@ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+			@ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+	})
 	public boolean updateRoleById(@PathVariable(value = "id") Long id, @Valid @RequestBody String roleString) {
 
 		Gson g = new Gson();

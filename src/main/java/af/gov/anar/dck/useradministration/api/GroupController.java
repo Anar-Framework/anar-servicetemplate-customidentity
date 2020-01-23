@@ -1,7 +1,12 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.annotation.ThrowsException;
+import af.gov.anar.api.annotation.ThrowsExceptions;
 import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
+import af.gov.anar.dck.infrastructure.exception.InternalServerProblemException;
+import af.gov.anar.dck.infrastructure.exception.ResourceNotFoundException;
+import af.gov.anar.dck.infrastructure.exception.SubmissionException;
 import af.gov.anar.dck.useradministration.model.*;
 import af.gov.anar.dck.useradministration.service.RoleService;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -16,6 +21,7 @@ import af.gov.anar.dck.useradministration.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -39,6 +45,9 @@ public class GroupController extends ResponseHandler {
 	private GroupAuthService groupAuthService;
 
 	@GetMapping()
+	@ThrowsExceptions({
+			@ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+	})
 	public List<Group> groups() {
 		// fetch all the groups and
 		String envSlug = userService.getCurrentEnv();
@@ -46,6 +55,10 @@ public class GroupController extends ResponseHandler {
 	}
 
 	@PostMapping()
+	@ThrowsExceptions({
+			@ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+			@ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+	})
 	public Group create(@Valid @RequestBody String group) {
 
 		Gson gson = new Gson();
@@ -55,6 +68,9 @@ public class GroupController extends ResponseHandler {
 	}
 
 	@GetMapping(path = "/{id}")
+	@ThrowsExceptions({
+			@ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+	})
 	public ObjectNode getGroupById(@PathVariable(value = "id") Long id) {
 		// given the group, find it from database and return it
 		Group group = groupAuthService.findById(id);
@@ -71,6 +87,11 @@ public class GroupController extends ResponseHandler {
 	}
 
 	@PutMapping(path = "/{id}")
+	@ThrowsExceptions({
+			@ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+			@ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+			@ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+	})
 	public boolean updateGroupById(@PathVariable(value = "id") Long id, @Valid @RequestBody String groupString) {
 		Gson gson = new Gson();
 		Group group = gson.fromJson(groupString, Group.class);

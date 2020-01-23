@@ -1,7 +1,12 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.annotation.ThrowsException;
+import af.gov.anar.api.annotation.ThrowsExceptions;
 import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
+import af.gov.anar.dck.infrastructure.exception.InternalServerProblemException;
+import af.gov.anar.dck.infrastructure.exception.ResourceNotFoundException;
+import af.gov.anar.dck.infrastructure.exception.SubmissionException;
 import af.gov.anar.dck.infrastructure.logger.Loggable;
 import af.gov.anar.dck.useradministration.model.Group;
 import af.gov.anar.dck.useradministration.service.GroupService;
@@ -21,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,12 +58,20 @@ public class UserController  extends ResponseHandler {
     ObjectMapper mapper = new ObjectMapper();
 
     @GetMapping
+
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class)
+    })
     public List<User> findAll() {
         String envSlug = userAuthService.getCurrentEnv();
         return userAuthService.findAllByEnv(envSlug);
     }
 
     @GetMapping("/{id}")
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class)
+    })
     public ObjectNode detail(@PathVariable("id") Long id) {
         User user = userAuthService.findById(id);
         List<Group> groupList = groupService.findAllByEnv(userAuthService.getCurrentEnv());
@@ -72,6 +86,11 @@ public class UserController  extends ResponseHandler {
     }
 
     @PostMapping
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public User create(@RequestBody String userPayload, HttpServletRequest request) throws Exception {
         logger.info("Entry UserController>CREATE() - POST");
         User currentLoggedInUser = userAuthService.getLoggedInUser();
@@ -84,6 +103,11 @@ public class UserController  extends ResponseHandler {
     }
 
     @PutMapping("/{id}")
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public boolean update(@PathVariable("id") Long id, @RequestBody String userPayload, HttpServletRequest request)
             throws Exception {
         logger.info("Entry UserController>update() - PUT");
@@ -100,12 +124,20 @@ public class UserController  extends ResponseHandler {
 
     @Loggable
     @GetMapping(value = "/{id}/groups", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+    })
     public Collection<Group> getLoggedInUserGroups(@PathVariable(value = "id", required = true) Long loggedInUserId) {
         return userAuthService.findById(loggedInUserId).getGroups();
     }
 
     @Loggable
     @PutMapping(value = "/preferences")
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+    })
     public User updatePreferences(@RequestBody String preferences, HttpServletRequest request) throws Exception {
         logger.info("Entry UserController>updatePreferences() - PUT");
         User currentLoggedInUser = userAuthService.getLoggedInUser();
@@ -119,6 +151,11 @@ public class UserController  extends ResponseHandler {
 
     @Loggable
     @PutMapping(value = "/cpassword")
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public boolean updateUserPassword(@RequestParam("currentPassword") String currentPassword, @RequestParam("newPassword") String newPassword, HttpServletRequest request) throws Exception {
         logger.info("Entry UserController>updateUserPassword() - PUT");
 
@@ -135,6 +172,11 @@ public class UserController  extends ResponseHandler {
 
     @Loggable
     @PutMapping(value = "/change-odk-password")
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public boolean updateUserOkdPassword(@RequestParam("currentPassword") String currentPassword, @RequestParam("newPassword") String newPassword, HttpServletRequest request) throws Exception {
         
         logger.info("Entry UserController>updateUserOkdPassword() - PUT");

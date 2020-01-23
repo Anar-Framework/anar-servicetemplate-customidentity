@@ -1,6 +1,6 @@
 package af.gov.anar.dck.infrastructure.exception;
 
-public class SubmissionException extends Exception {
+public class SubmissionException extends RuntimeException {
 	
 	public SubmissionException(String msg) {
 		super(msg);

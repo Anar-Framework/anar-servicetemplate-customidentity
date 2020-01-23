@@ -1,7 +1,12 @@
 package af.gov.anar.dck.useradministration.api;
 
+import af.gov.anar.api.annotation.ThrowsException;
+import af.gov.anar.api.annotation.ThrowsExceptions;
 import af.gov.anar.api.config.EnableApiFactory;
 import af.gov.anar.api.handler.ResponseHandler;
+import af.gov.anar.dck.infrastructure.exception.InternalServerProblemException;
+import af.gov.anar.dck.infrastructure.exception.ResourceNotFoundException;
+import af.gov.anar.dck.infrastructure.exception.SubmissionException;
 import af.gov.anar.dck.infrastructure.security.JwtTokenUtil;
 import af.gov.anar.dck.useradministration.model.CustomUser;
 import af.gov.anar.dck.useradministration.model.Environment;
@@ -23,6 +28,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -81,6 +87,11 @@ public class AuthController extends ResponseHandler {
     private String uploadAvatarDir;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public ResponseEntity login(@RequestBody Map<String, String> loginUser) throws AuthenticationException {
         final String username = loginUser.get("username");
         final String password = loginUser.get("passwrd");
@@ -119,6 +130,11 @@ public class AuthController extends ResponseHandler {
     }
 
     @RequestMapping(value="/forgotpassword", method = RequestMethod.POST)
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public boolean forgotpassword(@RequestBody String email, HttpServletRequest request) throws Exception {
         User user = userService.findByEmail(email);
         if (user == null){
@@ -134,7 +150,12 @@ public class AuthController extends ResponseHandler {
         return true;
     }
 
-@RequestMapping(value = "/changepassword", method = RequestMethod.PUT)
+    @RequestMapping(value = "/changepassword", method = RequestMethod.PUT)
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public boolean changePassword(@RequestParam String newPassword, @RequestParam String confirmPassword, @RequestParam String token) {
 
         boolean result = userService.validatePasswordResetToken(token);
@@ -145,6 +166,10 @@ public class AuthController extends ResponseHandler {
     }
 
     @PutMapping(path = "/config")
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class)
+    })
     public ObjectNode updateConfig(Authentication authentication, @RequestParam("lang") String lang, @RequestParam("env") String envSlug) throws JsonParseException, IOException
     {
         String currentEnv = envSlug;
@@ -240,6 +265,11 @@ public class AuthController extends ResponseHandler {
 	}
 	
 	@PatchMapping("/avatar")
+    @ThrowsExceptions({
+            @ThrowsException(status = HttpStatus.NOT_FOUND, exception = ResourceNotFoundException.class),
+            @ThrowsException(status = HttpStatus.INTERNAL_SERVER_ERROR, exception = InternalServerProblemException.class),
+            @ThrowsException(status = HttpStatus.NO_CONTENT, exception = SubmissionException.class)
+    })
     public User updateAvatar(@RequestParam(value = "avatar", required = true) MultipartFile file)  throws IOException {
         Format formatter = new SimpleDateFormat("yyyy-MM-dd_HH_mm_ss");
         String fileName = formatter.format(Calendar.getInstance().getTime()) + "_thumbnail.jpg";
