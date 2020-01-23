@@ -1,8 +1,8 @@
-### Online and Offline Data Collection Kit of Anar Framework
+### Service Template with Custom Identity and Access Management of Anar Framework
 
 
 
 #### Documentation
 
 Refer to this repository **Wiki** section.
-https://github.com/Anar-Framework/anar-identity-custom/wiki
+https://github.com/Anar-Framework/anar-servicetemaplate-customidentity/wiki
