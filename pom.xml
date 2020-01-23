@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>af.gov.anar</groupId>
-	<artifactId>anar-identity-custom</artifactId>
+	<artifactId>anar-servicetemplate-customidentity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anar-identity-custom</name>
-	<description>Identityt Module of Anar Framework</description>
+	<name>anar-servicetemplate-customidentity</name>
+	<description>Service Template with custom identity and access management of Anar Framework</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
