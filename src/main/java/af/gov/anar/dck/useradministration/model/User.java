@@ -9,7 +9,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 
-import af.gov.anar.dck.instance.model.InstanceComment;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -96,12 +95,6 @@ public class User {
     @JoinTable(name = "user_group", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "group_id", referencedColumnName = "id"))
     @JsonIgnore
     private Collection<Group> groups = new HashSet<>();
-
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    @JsonIgnore
-    private Collection<InstanceComment> instanceComments;
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "environment_user", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "environment_id", referencedColumnName = "id"))
     @JsonIgnore

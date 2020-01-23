@@ -1,6 +1,5 @@
 package af.gov.anar.dck.useradministration.api;
 
-import af.gov.anar.dck.form.api.FormController;
 import af.gov.anar.dck.infrastructure.security.JwtTokenUtil;
 import af.gov.anar.dck.useradministration.model.CustomUser;
 import af.gov.anar.dck.useradministration.model.Environment;
@@ -50,7 +49,7 @@ import java.util.*;
 @Slf4j
 public class AuthController {
 
-    Logger logger = LoggerFactory.getLogger(FormController.class);
+    Logger logger = LoggerFactory.getLogger(AuthController.class);
     
     @Autowired
     private AuthenticationManager authenticationManager;

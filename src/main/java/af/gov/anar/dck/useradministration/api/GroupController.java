@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.Gson;
 import af.gov.anar.dck.common.auth.GroupAuthService;
-import af.gov.anar.dck.form.api.FormController;
 import af.gov.anar.dck.infrastructure.security.JwtTokenUtil;
 import af.gov.anar.dck.useradministration.service.CustomUserService;
 import af.gov.anar.dck.useradministration.service.UserService;
@@ -20,14 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-// import af.gov.anar.dck.domain.service.GroupService;
-
-/**
- * @author Jalil haidari
- * 
- *         Class for CRUD operation on Group
- *
- */
 
 @RestController
 @RequestMapping("/api/groups")

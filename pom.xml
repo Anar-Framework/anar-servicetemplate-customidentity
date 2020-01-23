@@ -408,11 +408,6 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.9</version>
 		</dependency>
-		<!--spring-boot-starter-quartz -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-quartz</artifactId>
-		</dependency>
 
 		<!-- spring-boot-starter-websocket -->
 		<dependency>
