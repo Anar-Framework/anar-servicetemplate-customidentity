@@ -11,18 +11,18 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-@Configuration
-@ConditionalOnBean(value = CorsService.class)
+//@Configuration
+//@ConditionalOnBean(value = CorsService.class)
 public class CORSConfig{
 
-    @Autowired
+//    @Autowired
     private CorsService corsService;
 
     /**
      *
      * Cross Origin Request for Kafka Integration
      */
-    @Bean
+//    @Bean
     public FilterRegistrationBean<CorsFilter> simpleCorsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
