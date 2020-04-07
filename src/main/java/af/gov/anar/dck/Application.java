@@ -1,6 +1,6 @@
 package af.gov.anar.dck;
 
-import af.gov.anar.lang.applicationname.EnableApplicationName;
+import af.gov.anar.core.applicationname.EnableApplicationName;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

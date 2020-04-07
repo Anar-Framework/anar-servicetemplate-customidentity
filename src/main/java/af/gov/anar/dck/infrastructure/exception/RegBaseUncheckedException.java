@@ -1,8 +1,8 @@
 package af.gov.anar.dck.infrastructure.exception;
 
 
-import af.gov.anar.lang.infrastructure.exception.common.BaseUncheckedException;
-import af.gov.anar.lang.infrastructure.exception.common.ExceptionUtils;
+import af.gov.anar.core.infrastructure.exception.common.BaseUncheckedException;
+import af.gov.anar.core.infrastructure.exception.common.ExceptionUtils;
 import af.gov.anar.lib.logger.Logger;
 import af.gov.anar.dck.infrastructure.constant.ApplicationGenericConstants;
 import af.gov.anar.dck.infrastructure.util.LoggerFactory;
